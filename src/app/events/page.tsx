@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import MiniHeroSection from "@/components/Hero_mini";
 import miniheroData from "@/lib/mini_hero_data";
 import { eventDataType } from "@/lib/types";
+import Image from "next/image";
 export default function Events() {
   
   // const [events, setEvents] = useState<eventDataType[]>([]);
@@ -11,7 +12,9 @@ export default function Events() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
- 
+  console.log(loading);
+  console.log(error);
+
   useEffect(() => {
     const fetchEvents = async () => {
       try {
@@ -24,8 +27,16 @@ export default function Events() {
         // setEvents(data);
         setRegularEvents(data.filter(event => !event.featured))
         setFeaturedEvents(data.filter(event => event.featured))
-      } catch (err: any) {
-        setError(err.message);
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+      setError(error.message);
+      // You can also check for specific error types if you've thrown custom errors
+    } 
+   else {
+      // Fallback for any other unexpected error type
+      setError('unknown error occured!');
+    }
+        
         
       } finally {
         setLoading(false);
