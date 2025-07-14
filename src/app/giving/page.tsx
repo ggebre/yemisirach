@@ -44,10 +44,10 @@ export default function Giving() {
               At [Church Name], we believe that giving is an act of worship and an essential part of our discipleship. Your tithes and offerings enable us to continue the vital work God has called us to do.
             </p>
             <p className="mb-6 font-semibold text-gray-700">
-              "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver." (2 Corinthians 9:7)
+              &quot;Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.&quot; (2 Corinthians 9:7)
             </p>
             <p className="mb-6">
-              Your financial partnership directly fuels our ministries, outreach efforts, and daily operations. Here's how your giving makes a difference:
+              Your financial partnership directly fuels our ministries, outreach efforts, and daily operations. Here&apos;s how your giving makes a difference:
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
@@ -62,7 +62,7 @@ export default function Giving() {
                 <div className="text-5xl text-green-600 mb-4">
                   <i className="fas fa-children"></i>
                 </div>
-                <h3 className="text-xl font-semibold text-green-800 mb-2">Youth & Children's Programs</h3>
+                <h3 className="text-xl font-semibold text-green-800 mb-2">Youth & Children&apos;s Programs</h3>
                 <p className="text-sm text-gray-700">Providing safe, engaging, and faith-filled environments for the next generation to learn and grow.</p>
               </div>
               <div className="bg-purple-50 p-6 rounded-lg shadow-sm">
@@ -124,7 +124,7 @@ export default function Giving() {
               </div>
               <h3 className="text-2xl font-semibold text-indigo-800 mb-3">Mail Your Gift</h3>
               <p className="text-md leading-relaxed text-gray-700 mb-4">
-                You can mail your check or money order to our church office. Please make checks payable to "[Church Name]".
+                You can mail your check or money order to our church office. Please make checks payable to &quot;[Church Name]&quot;.
               </p>
               <p className="font-semibold">
                 [Church Name] <br />
@@ -143,7 +143,7 @@ export default function Giving() {
                 Text any amount to our secure giving number to give instantly from your phone.
               </p>
               <p className="text-xl font-bold text-indigo-800">
-                Text "[Keyword]" to (123) 456-7890
+                Text &quot;[Keyword]&quot; to (123) 456-7890
               </p>
               <p className="text-sm text-gray-500 mt-2">
                 (First time users will receive a link to register.)
@@ -173,7 +173,7 @@ export default function Giving() {
             <div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">How do I set up recurring giving?</h3>
               <p className="text-lg text-gray-700">
-                On our online giving platform, simply select the "Recurring" option and choose your preferred frequency (weekly, bi-weekly, monthly, etc.) before completing your donation. You can manage your recurring gifts at any time through your donor account.
+                On our online giving platform, simply select the &quot;Recurring&quot; option and choose your preferred frequency (weekly, bi-weekly, monthly, etc.) before completing your donation. You can manage your recurring gifts at any time through your donor account.
               </p>
             </div>
             {/* FAQ Item 3 */}
