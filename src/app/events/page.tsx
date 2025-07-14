@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import MiniHeroSection from "@/components/Hero_mini";
 import miniheroData from "@/lib/mini_hero_data";
 import { eventDataType } from "@/lib/types";
-import Image from "next/image";
+// import Image from "next/image";
 export default function Events() {
   
   // const [events, setEvents] = useState<eventDataType[]>([]);

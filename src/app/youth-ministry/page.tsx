@@ -101,7 +101,7 @@ export default function YouthMinistry() {
             <div>
               <h3 className="text-2xl font-semibold text-indigo-600 mb-3">Our Mission</h3>
               <p className="text-lg leading-relaxed">
-                To equip young people to passionately follow Jesus, build authentic community, and impact their world with God's love.
+                To equip young people to passionately follow Jesus, build authentic community, and impact their world with God&apos;s love.
               </p>
             </div>
             {/* Vision */}
@@ -133,7 +133,7 @@ export default function YouthMinistry() {
             <div>
               <h3 className="text-2xl font-semibold text-indigo-600 mb-3">Weekly Youth Group</h3>
               <p className="mb-4">
-                Join us every **Sunday evening from 6:00 PM - 8:00 PM** in the Youth Hall for a high-energy night of games, worship, an impactful message, and small group discussions. It's the perfect place to connect with friends and grow in your walk with God.
+                Join us every **Sunday evening from 6:00 PM - 8:00 PM** in the Youth Hall for a high-energy night of games, worship, an impactful message, and small group discussions. It&apos;s the perfect place to connect with friends and grow in your walk with God.
               </p>
               <h3 className="text-2xl font-semibold text-indigo-600 mb-3">Small Groups</h3>
               <p>
@@ -144,7 +144,7 @@ export default function YouthMinistry() {
             <div>
               <h3 className="text-2xl font-semibold text-indigo-600 mb-3">Service & Outreach</h3>
               <p className="mb-4">
-                We're passionate about making a difference in our community and beyond. Throughout the year, we organize various service projects and outreach initiatives where students can put their faith into action.
+                We&apos;re passionate about making a difference in our community and beyond. Throughout the year, we organize various service projects and outreach initiatives where students can put their faith into action.
               </p>
               <h3 className="text-2xl font-semibold text-indigo-600 mb-3">Fun & Fellowship Events</h3>
               <p>
@@ -216,7 +216,7 @@ export default function YouthMinistry() {
             <div>
               <h3 className="text-xl font-semibold text-indigo-600 mb-2">Safety & Security</h3>
               <p className="mb-4">
-                Your student's safety is our top priority. All our youth leaders undergo thorough background checks and receive regular training. We maintain a secure environment at all events and activities.
+                Your student&apos;s safety is our top priority. All our youth leaders undergo thorough background checks and receive regular training. We maintain a secure environment at all events and activities.
               </p>
               <h3 className="text-xl font-semibold text-indigo-600 mb-2">Staying Connected</h3>
               <p>
@@ -230,7 +230,7 @@ export default function YouthMinistry() {
               </p>
               <h3 className="text-xl font-semibold text-indigo-600 mb-2">Have Questions?</h3>
               <p>
-                Don't hesitate to reach out to our Youth Ministry Director, Sarah Lee, with any questions or concerns.
+                Don&apos;t hesitate to reach out to our Youth Ministry Director, Sarah Lee, with any questions or concerns.
               </p>
               <a href="mailto:sarah.lee@mychurch.org" className="inline-block mt-4 text-blue-600 hover:underline font-semibold">Email Sarah Lee &raquo;</a>
             </div>
