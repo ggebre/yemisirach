@@ -60,6 +60,7 @@ export default function Contactus() {
         },
         body: JSON.stringify(prayerMessage),
       });
+      console.log(response)
     }
     if (formIdentifier === 'message-form'){
       const response = await fetch('/api/create-message', {
@@ -69,6 +70,7 @@ export default function Contactus() {
         },
         body: JSON.stringify({...formData, slug: formData.name}),
       });
+      console.log(response);
     }
       
       
