@@ -103,8 +103,9 @@ useEffect(() => {
         const sermons: sermonType[] = await response.json();
         // setLatestSermon(sermons);
         setLatestSermon(sermons[0]);
-      } catch (err: any) {
+      } catch (err: unknown) {
         // setError(err.message);
+        console.log(err)
         
       } finally {
         // setLoading(false);
@@ -303,7 +304,7 @@ useEffect(() => {
           </h2>
           <div className="max-w-3xl mx-auto text-lg leading-relaxed mb-8">
             <p className="mb-4">
-              We believe in the power of God's Word to transform lives. Beyond these messages, we invite you to connect with our community, grow in your faith, and find your place in our church family.
+              We believe in the power of God&apos;s Word to transform lives. Beyond these messages, we invite you to connect with our community, grow in your faith, and find your place in our church family.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-6">
