@@ -1,103 +1,280 @@
-import Image from "next/image";
+import HeroSection from "@/components/Hero";
+import GoogleMap from "@/components/GoogleMap";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  // Dummy data for featured ministries
+  const featuredMinistries = [
+    {
+      id: 1,
+      name: "Youth Ministry",
+      description: "A vibrant place for middle and high school students to grow in faith and build lasting friendships.",
+      image: "https://placehold.co/400x250/90EE90/333333?text=Youth",
+      link: "/youth-ministry" // Link to your actual Youth Ministry page
+    },
+    {
+      id: 2,
+      name: "Children's Ministry",
+      description: "Providing engaging and safe environments for children to learn about God's love through fun activities.",
+      image: "https://placehold.co/400x250/FFDEAD/333333?text=Children",
+      link: "#" // Link to your actual Children's Ministry page
+    },
+    {
+      id: 3,
+      name: "Community Outreach",
+      description: "Extending God's love to our community through service projects, partnerships, and compassionate care.",
+      image: "https://placehold.co/400x220/87CEEB/333333?text=Outreach",
+      link: "#" // Link to your actual Outreach page
+    }
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+  // Dummy data for upcoming events
+  const upcomingEvents = [
+    {
+      id: 1,
+      title: "Sunday Worship Service",
+      date: "Every Sunday",
+      time: "10:00 AM",
+      location: "In-person & Online",
+      link: "/events" // Link to specific event or main events page
+    },
+    {
+      id: 2,
+      title: "Mid-Week Bible Study",
+      date: "Wednesdays",
+      time: "7:00 PM",
+      location: "Church Fellowship Hall",
+      link: "/events"
+    },
+    {
+      id: 3,
+      title: "Youth Game Night",
+      date: "Friday, July 26",
+      time: "6:30 PM",
+      location: "Youth Hall",
+      link: "/youth-ministry"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
+      
+      {/* II. Hero Section */}
+      
+      <HeroSection />
+      <main className="container mx-auto px-4 py-12">
+
+        {/* III. Welcome / About Us Section (Condensed) */}
+        <section className="mb-16 bg-white p-8 rounded-lg shadow-lg text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-indigo-700 mb-6">
+            A Place to Belong
+          </h2>
+          <div className="max-w-3xl mx-auto text-lg leading-relaxed">
+            <p className="mb-4">
+              At Chicago Yemsrach Evangelical Church, we are a diverse and welcoming community passionate about growing in our relationship with God and with each other. We believe in the transforming power of Jesus Christ and strive to live out His love in every aspect of our lives.
+            </p>
+            <p>
+              Whether you're exploring faith, new to the area, or looking for a church home, we invite you to experience God's grace and connect with our family.
+            </p>
+            <a
+              href="/about" // Link to your About Us page
+              className="inline-block mt-6 px-6 py-3 bg-gray-700 text-white font-semibold rounded-full hover:bg-gray-800 transition duration-300"
+            >
+              Learn More About Us
+            </a>
+          </div>
+        </section>
+
+        {/* IV. Service Times & Location Highlight */}
+        <section id="visit-us" className="mb-16 bg-white p-8 rounded-lg shadow-lg text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-indigo-700 mb-8">
+            Join Us This Sunday!
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-center">
+            <div>
+              <p className="text-2xl font-bold text-gray-800 mb-4">
+                Sunday Worship Service: <br className="md:hidden"/> 10:00 AM CDT
+              </p>
+              <p className="text-lg text-gray-700 mb-4">
+                **Location:** <br />
+                5850 N Elston Ave, Chicago, IL 60646
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <a
+                  href="https://maps.app.goo.gl/F2h7Q23ahrRB8Fri9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 bg-teal-600 text-white font-semibold rounded-full shadow-md hover:bg-teal-700 transition duration-300"
+                >
+                  Get Directions
+                </a>
+                <a
+                  href="/contact" // Link to your Contact Us page
+                  className="inline-block px-6 py-3 border border-teal-600 text-teal-700 font-semibold rounded-full hover:bg-teal-50 transition duration-300"
+                >
+                  Contact Us
+                </a>
+              </div>
+            </div>
+            {/* Map Placeholder */}
+            <GoogleMap />
+          </div>
+        </section>
+
+        {/* V. Key Ministries / Programs Overview */}
+        <section className="mb-16 bg-white p-8 rounded-lg shadow-lg">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-8">
+            Grow & Connect Through Ministries
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {featuredMinistries.map(ministry => (
+              <div key={ministry.id} className="bg-gray-100 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
+                <img src={ministry.image} alt={ministry.name} className="w-full h-48 object-cover" />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-indigo-800 mb-2">{ministry.name}</h3>
+                  <p className="text-md leading-relaxed text-gray-700 mb-4">{ministry.description}</p>
+                  <a
+                    href={ministry.link}
+                    className="inline-block px-4 py-2 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition duration-300 text-sm"
+                  >
+                    Learn More
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <a
+              href="#" // Link to your main Ministries page
+              className="inline-block px-6 py-3 bg-gray-700 text-white font-semibold rounded-full hover:bg-gray-800 transition duration-300"
+            >
+              View All Ministries
+            </a>
+          </div>
+        </section>
+
+        {/* VI. Latest Sermons / Messages Highlight */}
+        <section className="mb-16 bg-white p-8 rounded-lg shadow-lg text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-indigo-700 mb-8">
+            Hear the Latest Message
+          </h2>
+          <div className="max-w-3xl mx-auto">
+            {/* Example: Embed latest sermon video/audio */}
+            <div className="relative w-full overflow-hidden rounded-lg shadow-md mb-6" style={{ paddingTop: '56.25%' /* 16:9 Aspect Ratio */ }}>
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/your_latest_sermon_id" // Replace with actual YouTube/Vimeo embed URL
+                title="Latest Sermon Title"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <h3 className="text-2xl font-semibold text-gray-800 mb-2">The Power of Hope in Challenging Times</h3>
+            <p className="text-md text-gray-600 mb-4">Pastor John Doe | June 9, 2025</p>
+            <p className="text-lg leading-relaxed text-gray-700 mb-6">
+              Discover how to find unwavering hope and strength through faith, even when faced with life's greatest challenges.
+            </p>
+            <a
+              href="/sermons/#sermons" // Link to your Sermons page
+              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition duration-300"
+            >
+              Watch/Listen to All Sermons
+            </a>
+          </div>
+        </section>
+
+        {/* VII. Upcoming Events / Calendar Preview */}
+        <section className="mb-16 bg-white p-8 rounded-lg shadow-lg">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-8">
+            What's Happening Next
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {upcomingEvents.map(event => (
+              <div key={event.id} className="bg-gray-100 p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold text-indigo-800 mb-2">{event.title}</h3>
+                <p className="text-md text-gray-600 mb-1">
+                  <i className="far fa-calendar-alt mr-2"></i> {event.date} at {event.time}
+                </p>
+                <p className="text-md text-gray-600 mb-4">
+                  <i className="fas fa-map-marker-alt mr-2"></i> {event.location}
+                </p>
+                <a
+                  href={event.link}
+                  className="inline-block px-5 py-2 bg-orange-600 text-white font-semibold rounded-full hover:bg-orange-700 transition duration-300 text-sm"
+                >
+                  View Details
+                </a>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <a
+              href="/events" // Link to your main Events page
+              className="inline-block px-6 py-3 bg-gray-700 text-white font-semibold rounded-full hover:bg-gray-800 transition duration-300"
+            >
+              View Full Events Calendar
+            </a>
+          </div>
+        </section>
+
+        {/* VIII. Secondary Call to Action (CTA) Section */}
+        <section className="mb-16 bg-white p-8 rounded-lg shadow-lg text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-indigo-700 mb-8">
+            Take Your Next Step
+          </h2>
+          <div className="max-w-4xl mx-auto text-lg leading-relaxed mb-8">
+            <p>
+              Ready to learn more, get involved, or support our mission? We're here to help you connect!
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-6">
+            <a
+              href="/giving" // Link to your Giving page
+              className="inline-block px-8 py-4 bg-green-600 text-white font-semibold rounded-full shadow-lg hover:bg-green-700 transition duration-300 transform hover:scale-105"
+            >
+              Give Online
+            </a>
+            <a
+              href="/events" // Link to your Ministries page
+              className="inline-block px-8 py-4 bg-yellow-600 text-white font-semibold rounded-full shadow-lg hover:bg-yellow-700 transition duration-300 transform hover:scale-105"
+            >
+              Get Involved
+            </a>
+            <a
+              href="/contact" // Link to your Contact Us page
+              className="inline-block px-8 py-4 bg-purple-600 text-white font-semibold rounded-full shadow-lg hover:bg-purple-700 transition duration-300 transform hover:scale-105"
+            >
+              Contact Us Directly
+            </a>
+          </div>
+        </section>
+
+        {/* IX. Testimonials / Community Stories (Optional) */}
+        <section className="bg-white p-8 rounded-lg shadow-lg text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-indigo-700 mb-8">
+            Stories of Transformation
+          </h2>
+          <div className="max-w-3xl mx-auto text-lg leading-relaxed">
+            <p className="italic mb-6">
+              "Joining [Church Name] has transformed my life. The welcoming community and powerful messages have truly helped me grow in my faith."
+              <br /> - John S.
+            </p>
+            <p className="italic">
+              "I found a true sense of belonging and purpose here. The outreach programs allowed me to serve in ways I never imagined."
+              <br /> - Sarah M.
+            </p>
+            {/* You could add more testimonials or a link to a full stories page */}
+            <a href="#" className="inline-block mt-6 text-indigo-600 hover:underline font-semibold">Read More Stories &raquo;</a>
+          </div>
+        </section>
+
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
+
+const contacts = [
+  { name: 'Taylor', email: 'taylor@mail.com' },
+  { name: 'Alice', email: 'alice@mail.com' },
+  { name: 'Bob', email: 'bob@mail.com' }
+];
