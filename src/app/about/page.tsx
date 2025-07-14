@@ -145,9 +145,27 @@ export default async function Aboutus() {
           </div>
           {/* Community Photos / Gallery */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            <img src="https://placehold.co/400x300/E0E7FF/4338CA?text=Fellowship" alt="Church Fellowship" className="rounded-lg shadow-md object-cover w-full h-full" />
-            <img src="https://placehold.co/400x300/E0E7FF/4338CA?text=Serving" alt="Serving Community" className="rounded-lg shadow-md object-cover w-full h-full" />
-            <img src="https://placehold.co/400x300/E0E7FF/4338CA?text=Small+Group" alt="Small Group" className="rounded-lg shadow-md object-cover w-full h-full" />
+            <Image 
+                src={"https://placehold.co/400x300/E0E7FF/4338CA?text=Fellowship"} 
+                alt="Church Fellowship" 
+                className="rounded-lg shadow-md object-cover w-full h-full"
+                width={400}
+                height={300}
+                />
+              <Image 
+                src={"https://placehold.co/400x300/E0E7FF/4338CA?text=Serving"}
+                alt="Serving Community" 
+                className="rounded-lg shadow-md object-cover w-full h-full"
+                width={400}
+                height={300}
+                />
+              <Image 
+                src={"https://placehold.co/400x300/E0E7FF/4338CA?text=Small+Group"}
+                alt="Small Group" 
+                className="rounded-lg shadow-md object-cover w-full h-full"
+                width={400}
+                height={300}
+                />
           </div>
           <a href="#" className="inline-block px-8 py-4 bg-purple-600 text-white font-semibold rounded-full shadow-lg hover:bg-purple-700 transition duration-300 transform hover:scale-105">
             Discover Ways to Get Involved
