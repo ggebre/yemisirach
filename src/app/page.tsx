@@ -73,7 +73,7 @@ export default function Home() {
               At Chicago Yemsrach Evangelical Church, we are a diverse and welcoming community passionate about growing in our relationship with God and with each other. We believe in the transforming power of Jesus Christ and strive to live out His love in every aspect of our lives.
             </p>
             <p>
-              Whether you're exploring faith, new to the area, or looking for a church home, we invite you to experience God's grace and connect with our family.
+              Whether you&apos;re exploring faith, new to the area, or looking for a church home, we invite you to experience God&apos;s grace and connect with our family.
             </p>
             <a
               href="/about" // Link to your About Us page
@@ -172,7 +172,7 @@ export default function Home() {
             <h3 className="text-2xl font-semibold text-gray-800 mb-2">The Power of Hope in Challenging Times</h3>
             <p className="text-md text-gray-600 mb-4">Pastor John Doe | June 9, 2025</p>
             <p className="text-lg leading-relaxed text-gray-700 mb-6">
-              Discover how to find unwavering hope and strength through faith, even when faced with life's greatest challenges.
+              Discover how to find unwavering hope and strength through faith, even when faced with life&apos;s greatest challenges.
             </p>
             <a
               href="/sermons/#sermons" // Link to your Sermons page
@@ -186,7 +186,7 @@ export default function Home() {
         {/* VII. Upcoming Events / Calendar Preview */}
         <section className="mb-16 bg-white p-8 rounded-lg shadow-lg">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-8">
-            What's Happening Next
+            What&apos;s Happening Next
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {upcomingEvents.map(event => (
@@ -224,7 +224,7 @@ export default function Home() {
           </h2>
           <div className="max-w-4xl mx-auto text-lg leading-relaxed mb-8">
             <p>
-              Ready to learn more, get involved, or support our mission? We're here to help you connect!
+              Ready to learn more, get involved, or support our mission? We&apos;re here to help you connect!
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-6">
@@ -256,11 +256,11 @@ export default function Home() {
           </h2>
           <div className="max-w-3xl mx-auto text-lg leading-relaxed">
             <p className="italic mb-6">
-              "Joining [Church Name] has transformed my life. The welcoming community and powerful messages have truly helped me grow in my faith."
+              &quot;Joining [Church Name] has transformed my life. The welcoming community and powerful messages have truly helped me grow in my faith.&quot;
               <br /> - John S.
             </p>
             <p className="italic">
-              "I found a true sense of belonging and purpose here. The outreach programs allowed me to serve in ways I never imagined."
+              &quot;I found a true sense of belonging and purpose here. The outreach programs allowed me to serve in ways I never imagined.&quot;
               <br /> - Sarah M.
             </p>
             {/* You could add more testimonials or a link to a full stories page */}
@@ -273,8 +273,8 @@ export default function Home() {
   );
 }
 
-const contacts = [
-  { name: 'Taylor', email: 'taylor@mail.com' },
-  { name: 'Alice', email: 'alice@mail.com' },
-  { name: 'Bob', email: 'bob@mail.com' }
-];
+// const contacts = [
+//   { name: 'Taylor', email: 'taylor@mail.com' },
+//   { name: 'Alice', email: 'alice@mail.com' },
+//   { name: 'Bob', email: 'bob@mail.com' }
+// ];
