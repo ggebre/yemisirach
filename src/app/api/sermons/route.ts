@@ -4,6 +4,7 @@ import { sanityClient } from '@/sanity/client';
 // Handler for GET requests to this API route.
 // This function fetches all documents of type 'sermons' from Sanity.io.
 export async function GET(request: Request) {
+  console.log(request)
   try {
     // Define your GROQ query to fetch 'message' documents.
     // This query selects all documents where _type is 'events' and orders them by 'publishedAt' in descending order.
@@ -25,12 +26,19 @@ export async function GET(request: Request) {
 
     // Return the fetched messages as a JSON response.
     return NextResponse.json(sermons, { status: 200 });
-  } catch (error: any) {
-    console.error('Error fetching messages:', error);
-    return NextResponse.json(
-      { message: 'Failed to fetch sermons.', error: error.message || 'An unknown error occurred.' },
-      { status: 500 }
+  } catch (error: unknown) {
+    console.error('Error creating message:', error);
+    if (error instanceof Error) {
+      return NextResponse.json(
+        { message: 'Failed to send message. An internal server error occurred.', error: error.message || 'Unknown error' },
+        { status: 500 } // 500 Internal Server Error
+      );
+    } else {
+      return NextResponse.json(
+      { message: 'Failed to send message. An internal server error occurred.'},
+      { status: 500 } // 500 Internal Server Error
     );
+    }
   }
 }
 
