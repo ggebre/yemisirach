@@ -3,6 +3,7 @@ import "./globals.css";
 import NavBar from "@/layout/Navbar";
 import Footer from "@/layout/Footer";
 
+import { Analytics } from "@vercel/analytics/next"; 
 export const metadata: Metadata = {
   title: {
     template:  '%s | Yemisirach Church',
@@ -30,6 +31,7 @@ export default function RootLayout({
       >
       <NavBar />
         {children}
+        <Analytics />
       <Footer />
       </body>
     </html>
