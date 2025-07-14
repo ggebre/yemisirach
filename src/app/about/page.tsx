@@ -3,11 +3,12 @@ import MiniHeroSection from "@/components/Hero_mini";
 import miniheroData from "@/lib/mini_hero_data";
 import Card from "@/components/Card";
 import GoogleMap from "@/components/GoogleMap";
-import { type SanityDocument } from "next-sanity";
-import { sanityClient } from "@/sanity/client";
+import Image from "next/image";
+// import { type SanityDocument } from "next-sanity";
+// import { sanityClient } from "@/sanity/client";
 
-const POSTS_QUERY = `*[ _type == "leaders"]`;
-const options = { next: { revalidate: 30 } };
+// const POSTS_QUERY = `*[ _type == "leaders"]`;
+// const options = { next: { revalidate: 30 } };
 export default async function Aboutus() {
   
   const mapEmbedUrl = "https://maps.app.goo.gl/F2h7Q23ahrRB8Fri9"
@@ -32,18 +33,32 @@ export default async function Aboutus() {
           </h2>
           <div className="max-w-3xl mx-auto text-lg leading-relaxed">
             <p className="mb-6">
-              [Church Name] began with a humble gathering of dedicated families in [Year], united by a shared vision to foster a vibrant community centered on Christ's teachings. What started as a small home Bible study quickly grew into a thriving congregation, driven by a passion for worship, fellowship, and service.
+              [Church Name] began with a humble gathering of dedicated families in [Year], united by a shared vision to foster a vibrant community centered on Christ&apos; teachings. What started as a small home Bible study quickly grew into a thriving congregation, driven by a passion for worship, fellowship, and service.
             </p>
             <p className="mb-6">
-              Over the decades, we've celebrated many milestones, including the construction of our first sanctuary in [Year], the launch of our compassionate outreach programs in [Year], and the expansion of our youth ministry in [Year]. Each step has been a testament to God's faithfulness and the unwavering commitment of our members.
+              Over the decades, we&apos;ve celebrated many milestones, including the construction of our first sanctuary in [Year], the launch of our compassionate outreach programs in [Year], and the expansion of our youth ministry in [Year]. Each step has been a testament to God&apos; faithfulness and the unwavering commitment of our members.
             </p>
             <p>
               Today, we continue to build upon this rich legacy, embracing new challenges and opportunities to spread love, hope, and faith in [City/Region] and beyond. Our story is one of grace, growth, and a deepening walk with God.
             </p>
             {/* Optional: Add historical photos here */}
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <img src="https://placehold.co/600x400/E5E7EB/7F8C8D?text=Early+Days" alt="Early Church Days" className="rounded-lg shadow-md" />
-              <img src="https://placehold.co/600x400/E5E7EB/7F8C8D?text=Community+Growth" alt="Community Growth" className="rounded-lg shadow-md" />
+              <Image 
+                src={"https://placehold.co/600x400/E5E7EB/7F8C8D?text=Early+Days"} 
+                alt="Early Church Days" 
+                className="rounded-lg shadow-md"
+                width={600}
+                height={400}
+                />
+              <Image 
+                src={"https://placehold.co/600x400/E5E7EB/7F8C8D?text=Community+Growth"}
+                alt="Community Growth" 
+                className="rounded-lg shadow-md"
+                width={600}
+                height={400}
+                />
+                
+             
             </div>
           </div>
         </section>
@@ -58,7 +73,7 @@ export default async function Aboutus() {
             <div>
               <h3 className="text-2xl font-semibold text-indigo-600 mb-3">Our Mission</h3>
               <p className="text-lg leading-relaxed">
-                Our mission is to worship God authentically, share the Gospel, and nurture believers into true disciples who are equipped to serve and spread Christ's message globally, in collaboration with other ministries and through dedicated community service.
+                Our mission is to worship God authentically, share the Gospel, and nurture believers into true disciples who are equipped to serve and spread Christ&apos; message globally, in collaboration with other ministries and through dedicated community service.
               </p>
             </div>
             {/* Vision */}
@@ -122,7 +137,7 @@ export default async function Aboutus() {
           </h2>
           <div className="max-w-3xl mx-auto text-lg leading-relaxed mb-8">
             <p className="mb-4">
-              Our church is more than just a building; it's a family where everyone is welcome. We believe in doing life together, supporting one another, and growing in faith through authentic relationships. From weekly small groups to impactful outreach projects, there are countless ways to connect and serve.
+              Our church is more than just a building; it&apos; a family where everyone is welcome. We believe in doing life together, supporting one another, and growing in faith through authentic relationships. From weekly small groups to impactful outreach projects, there are countless ways to connect and serve.
             </p>
             <p>
               We invite you to explore the many opportunities to get involved, find your place, and share your gifts within our loving community.
@@ -148,13 +163,13 @@ export default async function Aboutus() {
             <div>
               <h3 className="text-xl font-semibold text-indigo-600 mb-2">During Service</h3>
               <p className="mb-4">
-                Our Sunday worship service at **10:00 AM** is a vibrant blend of contemporary worship music, heartfelt prayer, and an inspiring message from the Bible. Services typically last about 90 minutes. We invite you to come as you are – there's no dress code!
+                Our Sunday worship service at **10:00 AM** is a vibrant blend of contemporary worship music, heartfelt prayer, and an inspiring message from the Bible. Services typically last about 90 minutes. We invite you to come as you are – there&apos;s no dress code!
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-indigo-600 mb-2">For Families</h3>
               <p className="mb-4">
-                We offer engaging and safe children's ministry programs for infants through 5th grade, available during the main service. Our dedicated volunteers are background-checked and committed to creating a fun learning environment for your kids.
+                We offer engaging and safe children&apos;s ministry programs for infants through 5th grade, available during the main service. Our dedicated volunteers are background-checked and committed to creating a fun learning environment for your kids.
               </p>
             </div>
           </div>
