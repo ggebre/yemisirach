@@ -46,21 +46,27 @@ export async function POST(request: Request) {
       { message: 'Message sent successfully! Thank you for contacting us.', documentId: result._id },
       { status: 201 } // 201 Created status is appropriate for successful resource creation
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     // Catch any errors that occur during request parsing or Sanity interaction
     console.error('Error creating message:', error);
-
-    // Return a detailed error response to the client
-    return NextResponse.json(
-      { message: 'Failed to send message. An internal server error occurred.', error: error.message || 'Unknown error' },
+    if (error instanceof Error) {
+      return NextResponse.json(
+        { message: 'Failed to send message. An internal server error occurred.', error: error.message || 'Unknown error' },
+        { status: 500 } // 500 Internal Server Error
+      );
+    } else {
+      return NextResponse.json(
+      { message: 'Failed to send message. An internal server error occurred.'},
       { status: 500 } // 500 Internal Server Error
     );
+    }
   }
 }
 
 // Optionally, you can explicitly export other HTTP methods that are not allowed
 // to return a 405 for those methods, though Next.js handles this by default.
 export async function GET(request: Request) {
+  console.log(request)
   return NextResponse.json({ message: 'GET method not allowed for this endpoint.' }, { status: 405 });
 }
 
