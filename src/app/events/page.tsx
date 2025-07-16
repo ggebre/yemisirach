@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import MiniHeroSection from "@/components/Hero_mini";
 import miniheroData from "@/lib/mini_hero_data";
 import { eventDataType } from "@/lib/types";
+import { urlForImage } from "@/lib/sanityImageUrl";
 // import Image from "next/image";
 export default function Events() {
   
@@ -46,9 +47,6 @@ export default function Events() {
 
     fetchEvents();
   }, []);
-
-  
-
   // State for filtering
   const [filterCategory, setFilterCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
@@ -84,7 +82,7 @@ export default function Events() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {featuredEvents.map(event => (
                 <div key={event._id} className="bg-gray-100 rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
-                  <img src={event.image} alt={event.title} className="w-full md:w-1/2 h-56 md:h-auto object-cover" />
+                  <img src={ urlForImage(event.image).url()} alt={event.title} className="w-full md:w-1/2 h-56 md:h-auto object-cover" />
                   <div className="p-6 flex flex-col justify-between md:w-1/2">
                     <div>
                       <span className={`text-xs font-semibold px-2 py-1 rounded-full ${event.category === 'Youth' ? 'bg-green-200 text-green-800' : event.category === 'Outreach' ? 'bg-blue-200 text-blue-800' : 'bg-purple-200 text-purple-800'}`}>
