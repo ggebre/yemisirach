@@ -70,10 +70,7 @@ export default function Home() {
           </h2>
           <div className="max-w-3xl mx-auto text-lg leading-relaxed">
             <p className="mb-4">
-              At Chicago Yemsrach Evangelical Church, we are a diverse and welcoming community passionate about growing in our relationship with God and with each other. We believe in the transforming power of Jesus Christ and strive to live out His love in every aspect of our lives.
-            </p>
-            <p>
-              Whether you&apos;re exploring faith, new to the area, or looking for a church home, we invite you to experience God&apos;s grace and connect with our family.
+              Chicago Yemesrach Evangelical Church is a congregation where you can grow in a real relationship with God through faith. More than a religious exercise, faith is a new meaningful life through Jesus Christ that offers you forgiveness, hope, and peace. We are a family of Christ-followers devoted to solid biblical teaching, and expressions of our faith through worship, fellowship, outreach, giving, and serving. No matter where you are in your pursuit of knowing God and how much you are experiencing His love and grace, we invite you to discover what He is doing at Chicago Yemesrach Evangelical Church.
             </p>
             <a
               href="/about" // Link to your About Us page
