@@ -16,15 +16,15 @@ export default function NavBar() {
 
     return (
         
-    <nav className="bg-gray-800 p-4 shadow-lg rounded-b-lg">
+    <nav className="bg-blue-500 p-4 shadow-lg rounded-b-lg">
         <div className="container mx-auto flex justify-between items-center">
           {/* Brand/Logo Section */}
           <Image 
-            src={"/IMG_0308.png"}
+            src={"/church-logo.png"}
             alt="logo"
             className="w-[68px] h-[68px] object-cover" 
-            width="68" 
-            height="68" />
+            width="100" 
+            height="100" />
 
           {/* Mobile menu button (Hamburger icon) */}
           <Hamburger toggleMenu={toggleMenu} isOpen={isOpen} />

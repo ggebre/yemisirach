@@ -2,7 +2,7 @@
 export default function Footer() {
     return (
    
-    <footer className="bg-gray-900 text-gray-300 py-8 px-4 rounded-t-lg shadow-inner">
+    <footer className="bg-blue-500 text-gray-300 py-8 px-4 rounded-t-lg shadow-inner">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start text-center md:text-left gap-8">
 
         {/* Church Info & Copyright Section */}
