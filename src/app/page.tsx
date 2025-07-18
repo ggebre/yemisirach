@@ -8,21 +8,21 @@ export default function Home() {
       id: 1,
       name: "Youth Ministry",
       description: "A vibrant place for middle and high school students to grow in faith and build lasting friendships.",
-      image: "https://placehold.co/400x250/90EE90/333333?text=Youth",
+      image: "/church_youth_ministry.jpg",
       link: "/youth-ministry" // Link to your actual Youth Ministry page
     },
     {
       id: 2,
       name: "Children's Ministry",
       description: "Providing engaging and safe environments for children to learn about God's love through fun activities.",
-      image: "https://placehold.co/400x250/FFDEAD/333333?text=Children",
+      image: "/church_children.jpg",
       link: "#" // Link to your actual Children's Ministry page
     },
     {
       id: 3,
       name: "Community Outreach",
       description: "Extending God's love to our community through service projects, partnerships, and compassionate care.",
-      image: "https://placehold.co/400x220/87CEEB/333333?text=Outreach",
+      image: "/church_outreach.jpg",
       link: "#" // Link to your actual Outreach page
     }
   ];
@@ -125,7 +125,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {featuredMinistries.map(ministry => (
               <div key={ministry.id} className="bg-gray-100 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300">
-                <img src={ministry.image} alt={ministry.name} className="w-full h-48 object-cover" />
+                <img src={ministry.image} alt={ministry.name} className="w-full h-48 object-contain" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-indigo-800 mb-2">{ministry.name}</h3>
                   <p className="text-md leading-relaxed text-gray-700 mb-4">{ministry.description}</p>
