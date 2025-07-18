@@ -159,7 +159,7 @@ export default function Home() {
             <div className="relative w-full overflow-hidden rounded-lg shadow-md mb-6" style={{ paddingTop: '56.25%' /* 16:9 Aspect Ratio */ }}>
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/your_latest_sermon_id" // Replace with actual YouTube/Vimeo embed URL
+                src="https://www.youtube.com/embed/IJwWhiwbOrs?si=-Fdx_pfnAhxdtBF0" // Replace with actual YouTube/Vimeo embed URL
                 title="Latest Sermon Title"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

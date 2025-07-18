@@ -51,9 +51,9 @@ export default function Events() {
   const [filterCategory, setFilterCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const categories = ['All', 'Youth', 'Adults', 'Children', 'Outreach']; // Define your categories
+  const categories = ['All', 'Youth', 'Adults', 'Children', 'Outreach', 'Conference']; // Define your categories
 
-  const filteredEvents = regularEvents.filter(event => {
+  const filteredEvents = featuredEvents.filter(event => {
     const matchesCategory = filterCategory === 'All' || event.category === filterCategory;
     const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           event.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -142,7 +142,7 @@ export default function Events() {
             {filteredEvents.length > 0 ? (
               filteredEvents.map(event => (
                 <div key={event._id} className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                  <img src={event.image} alt={event.title} className="w-full sm:w-32 h-32 object-cover rounded-lg flex-shrink-0" />
+                  <img src={urlForImage(event.image).url()} alt={event.title} className="w-full sm:w-32 h-32 object-cover rounded-lg flex-shrink-0" />
                   <div className="flex-grow">
                     <span className={`text-xs font-semibold px-2 py-1 rounded-full mb-1 ${event.category === 'Youth' ? 'bg-green-200 text-green-800' : event.category === 'Outreach' ? 'bg-blue-200 text-blue-800' : 'bg-purple-200 text-purple-800'}`}>
                       {event.category}

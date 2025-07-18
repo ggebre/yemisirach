@@ -8,7 +8,8 @@ export async function GET(request: Request) {
   try {
     // Define your GROQ query to fetch 'message' documents.
     // This query selects all documents where _type is 'events' and orders them by 'publishedAt' in descending order.
-    const query = `*[_type == "events"] | order(publishedAt desc) {
+    // const query = `*[_type == "events"] | order(publishedAt desc) {
+    const query = `*[_type == "events"] | order(date desc) {
       _id,
       title,
       date,
