@@ -48,6 +48,7 @@ export default function Events() {
     fetchEvents();
   }, []);
   // State for filtering
+  console.log(regularEvents);
   const [filterCategory, setFilterCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
 
