@@ -111,7 +111,7 @@ export default function Contactus() {
           image={miniheroData['contact'].image}
           description = { miniheroData['contact'].description}
           />
-      <main className="container mx-auto px-4 py-12">
+      <main className="w-full mx-auto px-4 py-12">
 
         {/* III. Primary Contact Form */}
         <section className="mb-16 bg-white p-8 rounded-lg shadow-lg">

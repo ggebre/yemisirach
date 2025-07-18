@@ -24,7 +24,7 @@ export default async function Aboutus() {
           description = { miniheroData['about'].description}
           />
       
-      <main className="container mx-auto px-4 py-12">
+      <main className="w-full mx-auto px-4 py-12">
 
         {/* II. Our Story / History */}
         <section className="mb-16 bg-white p-8 rounded-lg shadow-lg">

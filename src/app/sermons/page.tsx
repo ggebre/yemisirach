@@ -161,7 +161,7 @@ useEffect(() => {
           description = { miniheroData['sermons'].description}
           />
 
-      <main className="container mx-auto px-4 py-12">
+      <main className="w-full mx-auto px-4 py-12">
 
         {/* III. Latest Sermon / Featured Message */}
         <section className="mb-16 bg-white p-8 rounded-lg shadow-lg">

@@ -61,7 +61,7 @@ export default function Home() {
       {/* II. Hero Section */}
       
       <HeroSection />
-      <main className="container mx-auto px-4 py-12">
+      <main className="w-full mx-auto px-4 py-12">
 
         {/* III. Welcome / About Us Section (Condensed) */}
         <section className="mb-16 bg-white p-8 rounded-lg shadow-lg text-center">

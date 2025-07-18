@@ -89,7 +89,7 @@ export default function YouthMinistry() {
         </div>
       </section>
 
-      <main className="container mx-auto px-4 py-12">
+      <main className="w-full mx-auto px-4 py-12">
 
         {/* III. Our Vision & Mission for Youth */}
         <section className="mb-16 bg-white p-8 rounded-lg shadow-lg text-center">

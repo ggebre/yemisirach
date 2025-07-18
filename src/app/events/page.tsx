@@ -71,7 +71,7 @@ export default function Events() {
           description = { miniheroData['events'].description}
           />
 
-      <main className="container mx-auto px-4 py-12">
+      <main className="w-full mx-auto px-4 py-12">
 
         {/* III. Featured Events / Highlights */}
         {featuredEvents.length > 0 && (
