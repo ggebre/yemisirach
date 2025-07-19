@@ -18,7 +18,6 @@ export default function Sermons() {
     });
     // State for filtering and searching
   const [searchTerm, setSearchTerm] = useState('');
-  const [filterSeries, setFilterSeries] = useState('All');
   const [filterSpeaker, setFilterSpeaker] = useState('All'); // New state for speaker filter
 
 
@@ -91,13 +90,11 @@ useEffect(() => {
                             sermon.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                             sermon.speaker.toLowerCase().includes(searchTerm.toLowerCase());
 
-      //const matchesSeries = filterSeries === 'All' || sermon.series === filterSeries;
-
       const matchesSpeaker = filterSpeaker === 'All' || sermon.speaker === filterSpeaker; // Apply speaker filter
 
       return matchesSearch && matchesSpeaker;
     });
-  }, [archivedSermons, searchTerm, filterSeries, filterSpeaker]);
+  }, [archivedSermons, searchTerm, filterSpeaker]);
 
   return (
     // The main container for the Sermon page
