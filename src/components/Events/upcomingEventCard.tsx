@@ -16,7 +16,7 @@ const CompactEventCard: FC<EventProps> = ({event}) => {
                 </span>
                 <h3 className="text-xl font-semibold text-indigo-800 mt-1 mb-1">{event.title}</h3>
                 <p className="text-sm text-gray-600">
-                    <i className="far fa-calendar-alt mr-1"></i> {event.date} at {event.time}
+                    <i className="far fa-calendar-alt mr-1"></i> {event.eventDate} at {event.time}
                 </p>
                 <p className="text-sm text-gray-600 mb-3">
                     <i className="fas fa-map-marker-alt mr-1"></i> {event.location}
