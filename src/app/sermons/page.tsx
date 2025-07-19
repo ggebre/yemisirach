@@ -3,6 +3,7 @@ import MiniHeroSection from "@/components/Hero_mini";
 import miniheroData from "@/lib/mini_hero_data";
 import { sermonType } from "@/lib/types";
 import { useState, useEffect, useMemo } from "react";
+import LatestSermon from "@/components/Sermons/sermonCard";
 
 export default function Sermons() {
     // Dummy data for sermons and series for demonstration
@@ -161,36 +162,13 @@ useEffect(() => {
       <main className="w-full mx-auto px-4 py-12">
 
         {/* III. Latest Sermon / Featured Message */}
-        <section className="mb-16 bg-white p-8 rounded-lg shadow-lg">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-8">
-            Latest Message: {latestSermon.title}
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            {/* Video Player */}
-            {latestSermon.videoUrl && (
-              <div className="relative w-full overflow-hidden rounded-lg shadow-md mb-6" style={{ paddingTop: '56.25%' /* 16:9 Aspect Ratio */ }}>
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src={latestSermon.videoUrl}
-                  title={latestSermon.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            )}
-
-            {/* Sermon Details */}
-            <div className="text-center md:text-left">
-              <p className="text-lg text-gray-700 mb-2">
-                **Speaker:** {latestSermon.speaker} | **Date:** {latestSermon.sermonDate}
-              </p>
-              <p className="text-md leading-relaxed text-gray-700 mb-6">
-                {latestSermon.description}
-              </p>  
-            </div>
-          </div>
-        </section>
+        <LatestSermon 
+          title={latestSermon.title}
+          speaker={latestSermon.speaker}
+          description={latestSermon.description}
+          videoUrl={latestSermon.videoUrl}
+          sermonDate={latestSermon.sermonDate}
+        />
 
         {/* IV. Sermon Archive / Browse All Messages */}
      <section className="mb-16 bg-white p-8 rounded-lg shadow-lg">
