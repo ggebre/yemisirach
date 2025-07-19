@@ -2,12 +2,12 @@ import { NextResponse } from 'next/server';
 import { sanityClient } from '@/sanity/client'; 
 
 // Handler for GET requests to this API route.
-// This function fetches all documents of type 'message' from Sanity.io.
+// This function fetches all documents of type 'events' from Sanity.io.
 export async function GET(request: Request) {
   console.log(request);
   try {
-    // Define your GROQ query to fetch 'message' documents.
-    // This query selects all documents where _type is 'events' and orders them by 'publishedAt' in descending order.
+    // Define your GROQ query to fetch 'events' documents.
+    // This query selects all documents where _type is 'events' and orders them by 'date' in descending order.
     // const query = `*[_type == "events"] | order(publishedAt desc) {
     const query = `*[_type == "events"] | order(date desc) {
       _id,
