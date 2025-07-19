@@ -50,7 +50,7 @@ export default function Events() {
   }, []);
   // State for filtering
   console.log(regularEvents);
-
+  console.log(featuredEvents)
   return (
     // The main container for the Events page
     <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
