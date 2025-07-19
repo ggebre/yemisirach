@@ -56,36 +56,20 @@ export default function Sermons() {
     {
       _id: 101,
       title: "Foundations of Hope",
+      videoUrl: '#',
+      description: "HELLO!",
       speaker: "Pastor John Doe",
       sermonDate: "May 26, 2025",
-      series: "Building Blocks of Faith",
       type: "audio",
       link: "#" // Link to single sermon page
     },
     {
       _id: 102,
       title: "Grace in the Everyday",
+      videoUrl: '#',
+      description: "HELLO!",
       speaker: "Sarah Lee",
       sermonDate: "May 19, 2025",
-      series: "Living a Purposeful Life",
-      type: "video",
-      link: "#"
-    },
-    {
-      _id: 103,
-      title: "Prayer: Our Direct Line",
-      speaker: "Pastor John Doe",
-      sermonDate: "May 12, 2025",
-      series: "Building Blocks of Faith",
-      type: "audio",
-      link: "#"
-    },
-    {
-      _id: 104,
-      title: "Community & Connection",
-      speaker: "David Chen",
-      sermonDate: "May 5, 2025",
-      series: "The Art of Worship",
       type: "video",
       link: "#"
     },
@@ -142,11 +126,11 @@ useEffect(() => {
                             sermon.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                             sermon.speaker.toLowerCase().includes(searchTerm.toLowerCase());
 
-      const matchesSeries = filterSeries === 'All' || sermon.series === filterSeries;
+      //const matchesSeries = filterSeries === 'All' || sermon.series === filterSeries;
 
       const matchesSpeaker = filterSpeaker === 'All' || sermon.speaker === filterSpeaker; // Apply speaker filter
 
-      return matchesSearch && matchesSeries && matchesSpeaker;
+      return matchesSearch && matchesSpeaker;
     });
   }, [archivedSermons, searchTerm, filterSeries, filterSpeaker]);
 
@@ -188,16 +172,6 @@ useEffect(() => {
             />
             <select
               className="p-3 border border-gray-300 rounded-lg w-full md:w-1/4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              value={filterSeries}
-              onChange={handleSeriesChange}
-            >
-              <option value="All">Filter by Series</option>
-              {sermonSeries.map(series => (
-                <option key={series.id} value={series.title}>{series.title}</option>
-              ))}
-            </select>
-            <select
-              className="p-3 border border-gray-300 rounded-lg w-full md:w-1/4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               value={filterSpeaker}
               onChange={handleSpeakerChange} // Connect to the new handler
             >
@@ -212,30 +186,13 @@ useEffect(() => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredSermons.length > 0 ? (
               filteredSermons.map(sermon => (
-                // <div key={sermon.id} className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col justify-between">
-                //   <div>
-                //     <h3 className="text-xl font-semibold text-indigo-800 mb-2">{sermon.title}</h3>
-                //     <p className="text-sm text-gray-600 mb-1">**Speaker:** {sermon.speaker}</p>
-                //     <p className="text-sm text-gray-600 mb-1">**Date:** {sermon.sermonDate}</p>
-                //     {sermon.series && (
-                //       <p className="text-sm text-gray-500 mb-4">**Series:** {sermon.series}</p>
-                //     )}
-                //   </div>
-                //   <div className="mt-4">
-                //     <a
-                //       href={sermon.link}
-                //       className="inline-block px-5 py-2 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition duration-300 text-sm"
-                //     >
-                //       {sermon.type === 'video' ? 'Watch Message' : 'Listen Message'}
-                //     </a>
-                //   </div>
-                // </div>
                 <SermonArchiveCard 
-                  videoUrl={latestSermon.videoUrl}
-                  title={latestSermon.title}
-                  speaker={latestSermon.speaker}
-                  sermonDate={latestSermon.sermonDate}
-                  description={latestSermon.description}
+                  key={sermon._id}
+                  videoUrl={sermon.videoUrl}
+                  title={sermon.title}
+                  speaker={sermon.speaker}
+                  sermonDate={sermon.sermonDate}
+                  description={sermon.description}
                 />
               ))
             ) : (
