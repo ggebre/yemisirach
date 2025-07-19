@@ -22,36 +22,6 @@ export default function Sermons() {
   const [filterSpeaker, setFilterSpeaker] = useState('All'); // New state for speaker filter
 
 
-  const sermonSeries = [
-    {
-      id: 1,
-      title: "Building Blocks of Faith",
-      speaker: "Pastor John Doe",
-      image: "https://placehold.co/400x250/A3C7D6/334E68?text=Series+1",
-      description: "A foundational series exploring core Christian beliefs and how to build a strong spiritual life.",
-      messagesCount: 5,
-      link: "#" // Link to individual series page or filtered archive
-    },
-    {
-      id: 2,
-      title: "Living a Purposeful Life",
-      speaker: "Sarah Lee",
-      image: "https://placehold.co/400x250/C8A2C8/6A326A?text=Series+2",
-      description: "Discover God's unique design for your life and practical steps to walk in His purpose every day.",
-      messagesCount: 4,
-      link: "#"
-    },
-    {
-      id: 3,
-      title: "The Art of Worship",
-      speaker: "David Chen",
-      image: "https://placehold.co/400x250/FFDDC1/E67E22?text=Series+3",
-      description: "Explore the depths of worship, beyond songs, into a lifestyle that honors God in every aspect.",
-      messagesCount: 3,
-      link: "#"
-    }
-  ];
-
   const archivedSermons = [
     {
       _id: 101,
@@ -105,11 +75,6 @@ useEffect(() => {
   // Function to handle changes in the speaker filter dropdown
   const handleSpeakerChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setFilterSpeaker(e.target.value);
-  };
-
-  // Function to handle changes in the series filter dropdown
-  const handleSeriesChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setFilterSeries(e.target.value);
   };
 
   // Memoize unique speakers to populate the dropdown efficiently
