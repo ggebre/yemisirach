@@ -9,11 +9,8 @@ export default function Sermons() {
     const [latestSermon, setLatestSermon] = useState({
       title: "",
       speaker: "",
-      date: "",
-      series: "",
+      sermonDate: "",
       videoUrl: "", 
-      audioUrl: "", 
-      notesUrl: "",
       description:""
     });
     // State for filtering and searching
@@ -57,7 +54,7 @@ export default function Sermons() {
       id: 101,
       title: "Foundations of Hope",
       speaker: "Pastor John Doe",
-      date: "May 26, 2025",
+      sermonDate: "May 26, 2025",
       series: "Building Blocks of Faith",
       type: "audio",
       link: "#" // Link to single sermon page
@@ -66,7 +63,7 @@ export default function Sermons() {
       id: 102,
       title: "Grace in the Everyday",
       speaker: "Sarah Lee",
-      date: "May 19, 2025",
+      sermonDate: "May 19, 2025",
       series: "Living a Purposeful Life",
       type: "video",
       link: "#"
@@ -75,7 +72,7 @@ export default function Sermons() {
       id: 103,
       title: "Prayer: Our Direct Line",
       speaker: "Pastor John Doe",
-      date: "May 12, 2025",
+      sermonDate: "May 12, 2025",
       series: "Building Blocks of Faith",
       type: "audio",
       link: "#"
@@ -84,7 +81,7 @@ export default function Sermons() {
       id: 104,
       title: "Community & Connection",
       speaker: "David Chen",
-      date: "May 5, 2025",
+      sermonDate: "May 5, 2025",
       series: "The Art of Worship",
       type: "video",
       link: "#"
@@ -186,43 +183,12 @@ useEffect(() => {
             {/* Sermon Details */}
             <div className="text-center md:text-left">
               <p className="text-lg text-gray-700 mb-2">
-                **Speaker:** {latestSermon.speaker} | **Date:** {latestSermon.date}
+                **Speaker:** {latestSermon.speaker} | **Date:** {latestSermon.sermonDate}
               </p>
-              {latestSermon.series && (
-                <p className="text-md text-gray-600 mb-4">
-                  **Series:** <a href="#" className="text-indigo-600 hover:underline">{latestSermon.series}</a>
-                </p>
-              )}
               <p className="text-md leading-relaxed text-gray-700 mb-6">
                 {latestSermon.description}
               </p>  
             </div>
-          </div>
-        </section>
-
-        {/* V. Sermon Series Overview */}
-        <section className="mb-16 bg-white p-8 rounded-lg shadow-lg">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-8">
-            Explore Sermon Series
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {sermonSeries.map(series => (
-              <div key={series.id} className="bg-gray-100 rounded-lg shadow-md overflow-hidden">
-                <img src={series.image} alt={series.title} className="w-full h-48 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-indigo-800 mb-2">{series.title}</h3>
-                  <p className="text-sm text-gray-600 mb-2">By {series.speaker}</p>
-                  <p className="text-md leading-relaxed text-gray-700 mb-4">{series.description}</p>
-                  <p className="text-sm text-gray-500 mb-4">{series.messagesCount} Messages</p>
-                  <a
-                    href={series.link}
-                    className="inline-block px-4 py-2 bg-indigo-600 text-white font-semibold rounded-full hover:bg-indigo-700 transition duration-300 text-sm"
-                  >
-                    View Series
-                  </a>
-                </div>
-              </div>
-            ))}
           </div>
         </section>
 
@@ -270,7 +236,7 @@ useEffect(() => {
                   <div>
                     <h3 className="text-xl font-semibold text-indigo-800 mb-2">{sermon.title}</h3>
                     <p className="text-sm text-gray-600 mb-1">**Speaker:** {sermon.speaker}</p>
-                    <p className="text-sm text-gray-600 mb-1">**Date:** {sermon.date}</p>
+                    <p className="text-sm text-gray-600 mb-1">**Date:** {sermon.sermonDate}</p>
                     {sermon.series && (
                       <p className="text-sm text-gray-500 mb-4">**Series:** {sermon.series}</p>
                     )}

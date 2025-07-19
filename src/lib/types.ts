@@ -50,11 +50,8 @@ export type prayerType = {
 
 export type sermonType = {
     title: string;
-    date: string;
+    sermonDate: string;
     speaker: string;
-    series: string;
     videoUrl: string;
-    audioUrl: string;
-    notesUrl: string;
     description: string;
 }
