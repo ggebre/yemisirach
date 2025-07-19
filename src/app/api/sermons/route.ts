@@ -11,12 +11,9 @@ export async function GET(request: Request) {
     const query = `*[_type == "sermons"] | order(publishedAt desc) {
       _id,
       title,
-      date,
+      sermonDate,
       speaker,
-      series,
       videoUrl,
-      audioUrl,
-      notesUrl,
       description,
       publishedAt
     }`;

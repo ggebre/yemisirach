@@ -4,10 +4,12 @@ import miniheroData from "@/lib/mini_hero_data";
 import { sermonType } from "@/lib/types";
 import { useState, useEffect, useMemo } from "react";
 import LatestSermon from "@/components/Sermons/sermonCard";
+import SermonArchiveCard from "@/components/Sermons/sermonArchiveCard";
 
 export default function Sermons() {
     // Dummy data for sermons and series for demonstration
     const [latestSermon, setLatestSermon] = useState({
+
       title: "",
       speaker: "",
       sermonDate: "",
@@ -52,7 +54,7 @@ export default function Sermons() {
 
   const archivedSermons = [
     {
-      id: 101,
+      _id: 101,
       title: "Foundations of Hope",
       speaker: "Pastor John Doe",
       sermonDate: "May 26, 2025",
@@ -61,7 +63,7 @@ export default function Sermons() {
       link: "#" // Link to single sermon page
     },
     {
-      id: 102,
+      _id: 102,
       title: "Grace in the Everyday",
       speaker: "Sarah Lee",
       sermonDate: "May 19, 2025",
@@ -70,7 +72,7 @@ export default function Sermons() {
       link: "#"
     },
     {
-      id: 103,
+      _id: 103,
       title: "Prayer: Our Direct Line",
       speaker: "Pastor John Doe",
       sermonDate: "May 12, 2025",
@@ -79,7 +81,7 @@ export default function Sermons() {
       link: "#"
     },
     {
-      id: 104,
+      _id: 104,
       title: "Community & Connection",
       speaker: "David Chen",
       sermonDate: "May 5, 2025",
@@ -162,7 +164,7 @@ useEffect(() => {
       <main className="w-full mx-auto px-4 py-12">
 
         {/* III. Latest Sermon / Featured Message */}
-        <LatestSermon 
+        <LatestSermon
           title={latestSermon.title}
           speaker={latestSermon.speaker}
           description={latestSermon.description}
@@ -210,24 +212,31 @@ useEffect(() => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredSermons.length > 0 ? (
               filteredSermons.map(sermon => (
-                <div key={sermon.id} className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold text-indigo-800 mb-2">{sermon.title}</h3>
-                    <p className="text-sm text-gray-600 mb-1">**Speaker:** {sermon.speaker}</p>
-                    <p className="text-sm text-gray-600 mb-1">**Date:** {sermon.sermonDate}</p>
-                    {sermon.series && (
-                      <p className="text-sm text-gray-500 mb-4">**Series:** {sermon.series}</p>
-                    )}
-                  </div>
-                  <div className="mt-4">
-                    <a
-                      href={sermon.link}
-                      className="inline-block px-5 py-2 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition duration-300 text-sm"
-                    >
-                      {sermon.type === 'video' ? 'Watch Message' : 'Listen Message'}
-                    </a>
-                  </div>
-                </div>
+                // <div key={sermon.id} className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col justify-between">
+                //   <div>
+                //     <h3 className="text-xl font-semibold text-indigo-800 mb-2">{sermon.title}</h3>
+                //     <p className="text-sm text-gray-600 mb-1">**Speaker:** {sermon.speaker}</p>
+                //     <p className="text-sm text-gray-600 mb-1">**Date:** {sermon.sermonDate}</p>
+                //     {sermon.series && (
+                //       <p className="text-sm text-gray-500 mb-4">**Series:** {sermon.series}</p>
+                //     )}
+                //   </div>
+                //   <div className="mt-4">
+                //     <a
+                //       href={sermon.link}
+                //       className="inline-block px-5 py-2 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition duration-300 text-sm"
+                //     >
+                //       {sermon.type === 'video' ? 'Watch Message' : 'Listen Message'}
+                //     </a>
+                //   </div>
+                // </div>
+                <SermonArchiveCard 
+                  videoUrl={latestSermon.videoUrl}
+                  title={latestSermon.title}
+                  speaker={latestSermon.speaker}
+                  sermonDate={latestSermon.sermonDate}
+                  description={latestSermon.description}
+                />
               ))
             ) : (
               <p className="text-center text-gray-600 col-span-full">No sermons found matching your criteria.</p>
