@@ -24,7 +24,7 @@ export type minihero = {
 export type eventDataType = {
       _id: string;
       title: string;
-      date: string;
+      eventDate: string;
       time: string;
       location: string;
       category: string;

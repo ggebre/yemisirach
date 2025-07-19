@@ -67,7 +67,7 @@ export default function Events() {
         <EventsSection featuredEvents={featuredEvents} />
 
         {/* IV. Events Calendar / Listing */}
-        <UpcomingEventsSection featuredEvents={featuredEvents} />
+        <UpcomingEventsSection featuredEvents={regularEvents} />
 
         {/* VII. Call to Action / Submit an Event (Optional) */}
         

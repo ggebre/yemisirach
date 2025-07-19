@@ -8,11 +8,12 @@ export async function GET(request: Request) {
   try {
     // Define your GROQ query to fetch 'events' documents.
     // This query selects all documents where _type is 'events' and orders them by 'date' in descending order.
-    // const query = `*[_type == "events"] | order(publishedAt desc) {
-    const query = `*[_type == "events" && !(_id in path("drafts.**"))] | order(date desc) {
+    // const query = `*[_type == "events" && !(_id in path("drafts.**"))] | order(date desc) {
+    const query = `*[_type == "events" && eventDate > now()] | order(eventDate asc) {
+    
       _id,
       title,
-      date,
+      eventDate,
       time,
       location,
       category,
