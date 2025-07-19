@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import MiniHeroSection from "@/components/Hero_mini";
 import miniheroData from "@/lib/mini_hero_data";
 import { eventDataType } from "@/lib/types";
-import { urlForImage } from "@/lib/sanityImageUrl";
-import EventsSection from "@/components/Events/eventCard";
+import EventsSection from "@/components/Events/featuredEventsList";
 import CompactEventCard from "@/components/Events/compactEventCard";
 // import Image from "next/image";
 export default function Events() {
