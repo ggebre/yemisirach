@@ -1,5 +1,4 @@
-import { eventDataType } from "@/lib/types"
-import { urlForImage } from "@/lib/sanityImageUrl";
+import { eventDataType } from "@/lib/types";
 import FeaturedEventCard from "./featuredEventCard";
 import { FC } from "react";
 
@@ -16,7 +15,7 @@ const EventsSection: FC<EventsSectionProps> = ({featuredEvents}) => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {featuredEvents.map(event => (
-                <FeaturedEventCard event={event} />
+                <FeaturedEventCard key={event._id} event={event} />
               ))}
             </div>
           </section>
