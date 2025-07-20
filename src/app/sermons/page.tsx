@@ -4,7 +4,6 @@ import miniheroData from "@/lib/mini_hero_data";
 import { sermonType } from "@/lib/types";
 import { useState, useEffect, useMemo } from "react";
 import LatestSermon from "@/components/Sermons/sermonLatestCard";
-import SermonArchiveCard from "@/components/Sermons/sermonArchiveCard";
 import SermonArchiveSection from "@/components/Sermons/sermonArchiveList";
 
 export default function Sermons() {
@@ -25,9 +24,7 @@ export default function Sermons() {
       videoUrl: "", 
       description:""
     },])
-    // State for filtering and searching
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filterSpeaker, setFilterSpeaker] = useState('All'); // New state for speaker filter
+    
 
 useEffect(() => {
     const fetchSermons = async () => {
@@ -56,31 +53,7 @@ useEffect(() => {
     fetchSermons();
   }, []);
 
-  // Function to handle changes in the speaker filter dropdown
-  const handleSpeakerChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setFilterSpeaker(e.target.value);
-  };
-
-  // Memoize unique speakers to populate the dropdown efficiently
-  const uniqueSpeakers = useMemo(() => {
-    const speakers = new Set<string>();
-    archivedSermons.forEach(sermon => speakers.add(sermon.speaker));
-    return ['All', ...Array.from(speakers).sort()]; // Add 'All' option and sort alphabetically
-  }, [archivedSermons]);
   
-  // Filtered sermons based on search term, series, and speaker
-  const filteredSermons = useMemo(() => {
-    return archivedSermons.filter(sermon => {
-      const matchesSearch = searchTerm === '' ||
-                            sermon.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            sermon.speaker.toLowerCase().includes(searchTerm.toLowerCase());
-
-      const matchesSpeaker = filterSpeaker === 'All' || sermon.speaker === filterSpeaker; // Apply speaker filter
-
-      return matchesSearch && matchesSpeaker;
-    });
-  }, [archivedSermons, searchTerm, filterSpeaker]);
-
   return (
     // The main container for the Sermon page
     // Assuming Navbar and Footer are handled in _app.js or a global layout
