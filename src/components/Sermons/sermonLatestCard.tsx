@@ -1,5 +1,6 @@
 import { sermonType } from "@/lib/types";
 export default function LatestSermon({title, videoUrl, sermonDate, description, speaker}: sermonType) {
+  console.log(videoUrl)
     return (
         <section className="mb-16 bg-white p-8 rounded-lg shadow-lg">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-indigo-700 mb-8">
@@ -19,7 +20,6 @@ export default function LatestSermon({title, videoUrl, sermonDate, description, 
                 ></iframe>
               </div>
             )}
-
             {/* Sermon Details */}
             <div className="text-center md:text-left">
               <p className="text-lg text-gray-700 mb-2">
