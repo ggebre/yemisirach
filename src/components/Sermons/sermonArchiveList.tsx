@@ -1,6 +1,5 @@
 'use client'
-import { useState } from "react";
-import { useMemo } from "react";
+import { useState, useMemo } from "react";
 import SermonArchiveCard from "./sermonArchiveCard";
 import { sermonType } from "@/lib/types";
 import { FC } from "react";

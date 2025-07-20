@@ -2,7 +2,7 @@
 import MiniHeroSection from "@/components/Hero_mini";
 import miniheroData from "@/lib/mini_hero_data";
 import { sermonType } from "@/lib/types";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect} from "react";
 import LatestSermon from "@/components/Sermons/sermonLatestCard";
 import SermonArchiveSection from "@/components/Sermons/sermonArchiveList";
 
