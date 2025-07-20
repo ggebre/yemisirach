@@ -49,6 +49,7 @@ export type prayerType = {
 }
 
 export type sermonType = {
+    _id: string;
     title: string;
     sermonDate: string;
     speaker: string;

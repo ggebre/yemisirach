@@ -3,47 +3,30 @@ import MiniHeroSection from "@/components/Hero_mini";
 import miniheroData from "@/lib/mini_hero_data";
 import { sermonType } from "@/lib/types";
 import { useState, useEffect, useMemo } from "react";
-import LatestSermon from "@/components/Sermons/sermonCard";
+import LatestSermon from "@/components/Sermons/sermonLatestCard";
 import SermonArchiveCard from "@/components/Sermons/sermonArchiveCard";
 
 export default function Sermons() {
     // Dummy data for sermons and series for demonstration
     const [latestSermon, setLatestSermon] = useState({
-
+      _id: "",
       title: "",
       speaker: "",
       sermonDate: "",
       videoUrl: "", 
       description:""
     });
+    const [archivedSermons, setArchivedSermons] = useState([{
+      _id: "",
+      title: "",
+      speaker: "",
+      sermonDate: "",
+      videoUrl: "", 
+      description:""
+    },])
     // State for filtering and searching
   const [searchTerm, setSearchTerm] = useState('');
   const [filterSpeaker, setFilterSpeaker] = useState('All'); // New state for speaker filter
-
-
-  const archivedSermons = [
-    {
-      _id: 101,
-      title: "Foundations of Hope",
-      videoUrl: '#',
-      description: "HELLO!",
-      speaker: "Pastor John Doe",
-      sermonDate: "May 26, 2025",
-      type: "audio",
-      link: "#" // Link to single sermon page
-    },
-    {
-      _id: 102,
-      title: "Grace in the Everyday",
-      videoUrl: '#',
-      description: "HELLO!",
-      speaker: "Sarah Lee",
-      sermonDate: "May 19, 2025",
-      type: "video",
-      link: "#"
-    },
-    // Add more dummy sermons here
-  ];
 
 useEffect(() => {
     const fetchSermons = async () => {
@@ -56,6 +39,9 @@ useEffect(() => {
         const sermons: sermonType[] = await response.json();
         // setLatestSermon(sermons);
         setLatestSermon(sermons[0]);
+        // console.log(sermons)
+        setArchivedSermons(sermons)
+        
       } catch (err: unknown) {
         // setError(err.message);
         console.log(err)
@@ -68,8 +54,6 @@ useEffect(() => {
 
     fetchSermons();
   }, []);
-
-  
 
   // Function to handle changes in the speaker filter dropdown
   const handleSpeakerChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -111,6 +95,7 @@ useEffect(() => {
 
         {/* III. Latest Sermon / Featured Message */}
         <LatestSermon
+          _id={latestSermon._id}
           title={latestSermon.title}
           speaker={latestSermon.speaker}
           description={latestSermon.description}
@@ -148,8 +133,10 @@ useEffect(() => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredSermons.length > 0 ? (
               filteredSermons.map(sermon => (
+               
                 <SermonArchiveCard 
                   key={sermon._id}
+                  _id={sermon._id}
                   videoUrl={sermon.videoUrl}
                   title={sermon.title}
                   speaker={sermon.speaker}
